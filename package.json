@@ -1,0 +1,27 @@
+{
+  "name": "olap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexfilatov2000/OLAP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexfilatov2000/OLAP/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/alexfilatov2000/OLAP#readme",
+  "dependencies": {
+    "csv-parser": "^2.3.3",
+    "dotenv": "^8.2.0",
+    "koa": "^2.13.0",
+    "koa-router": "^10.0.0",
+    "pg": "^8.5.1"
+  }
+}
