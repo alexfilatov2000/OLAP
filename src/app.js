@@ -14,11 +14,17 @@ const PORT = 3000;
 
 router.get('/', async () => {
   const files = await readdir('data');
+  const arr = [];
   for (const file of files) {
     const fileName = file.split('.')[0];
     const data = await parseCsv(`data/${file}`);
     const transformed = transform[fileName](data);
+    arr.push(...transformed);
   }
+  /*
+   * Тут проверяем значения в arr на уникальность.
+   * Повторяющиеся аниме преобразовываем в одно
+   */
 });
 
 app.listen(PORT, async () => {
