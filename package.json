@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r esm app.js"
+    "start": "nodemon -r esm src/app.js",
+    "prettier": "prettier --config prettier-config.json --write '**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,8 @@
     "koa-router": "^10.0.0",
     "lodash": "^4.17.20",
     "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.0"
   }
 }
