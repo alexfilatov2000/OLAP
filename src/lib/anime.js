@@ -19,7 +19,9 @@ export function checkDuplicates(arr) {
       if (arr[i].name.toLowerCase() === arr[j].name.toLowerCase()) {
         arr[i].rating = +((arr[i].rating + arr[j].rating) / 2).toFixed(2);
 				arr[i].viewers = arr[i].viewers + arr[j].viewers;
-				arr[i].genre = arr[i].genre + ',' + arr[j].genre;
+				arr[i].genre = [arr[i].genre, arr[j].genre]
+					.filter(genre => genre.length)
+					.join(', ');
 				arr[j].processed = true;
       }
 		}
