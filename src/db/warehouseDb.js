@@ -1,11 +1,10 @@
 import pg from 'pg';
 import config from '../config';
 
-// OLAPStage
 const pool = new pg.Pool({
-  user: config.db.user,
-  host: config.db.host,
-  database: config.db.database,
+    user: config.warehouse.user,
+    host: config.warehouse.host,
+    database: config.warehouse.database,
 });
 pool.connect();
 
