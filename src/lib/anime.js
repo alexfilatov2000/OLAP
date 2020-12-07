@@ -1,8 +1,14 @@
-const getAnimeInsertQuery = values =>
+export const getAnimeStagingInsertQuery = values =>
 		`INSERT INTO anime (name, genre, type, episodes, rating, viewers) VALUES (${values.join(',')})`;
+
+export const getAnimeWarehouseInsertQuery = values =>
+		`INSERT INTO anime (name, "typeId", episodes, rating, viewers) VALUES ('${values.name}', ${values.typeId}, ${values.episodes}, ${values.rating}, ${values.viewers}) RETURNING id`;
+
+export const getGenreWarehouseInsertQuery = ({ genre, anime }) =>
+`INSERT INTO "animeGenres" VALUES (${genre}, ${anime})`;
 		
 export const getStagingInsertQueries = (arr) =>
-	arr.map(values => getAnimeInsertQuery([
+	arr.map(values => getAnimeStagingInsertQuery([
 		`'${values.name}'`,
 		`'${values.genre}'`,
 		`'${values.type}'`,
